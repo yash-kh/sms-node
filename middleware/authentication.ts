@@ -18,7 +18,6 @@ export default function authentication(
           .status(401)
           .json({ code: "unauthorized", message: "Error! Token was not provided." })
       } else {
-        req.body.mobileNumber = token.sub
         next()
       }
     })
